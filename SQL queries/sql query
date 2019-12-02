@@ -1,0 +1,267 @@
+Interview Questions on SQL are based on following two tables, Employee Table and Employee Incentive Table.
+Table Name : Employee EMP_ID As PRIMARY KEY
+EMPLOYEE_ID	FIRST_NAME	 LAST_NAME	SALARY	 JOINING_DATE	 DEPARTMENT
+1	       Venkatesh	S	100000	        08/28/2015	     BANKING
+2	Ragavi	P	75000						08/28/2015		 BUSINESS
+3	Gopinath	C	50000		            03/02/2016       PHARMA
+4	Dinesh	G	50000		                03/02/2016       INSURANCE
+5	Saibabu	E	40000		                07/08/2017       SOFTWARE
+6	Hasan	S	29000		                07/08/2017       MANUFACTURING
+7	Divya	P	33000		                07/08/2017        HEALTHCARE
+8	Aravindan	R	40000		            07/08/2017         HEALTHCARE
+9	Sathish	MD	45000		                03/02/2016         AUTOMOBILE
+10	Prasanth	PKP	34000		            03/02/2016         INSURANCE
+11	Vijay	R	25684		                03/02/2016         BUSINESS
+12	Sivakumar	K	54789		            03/02/2016         SOFTWARE
+
+Table Name : Incentives
+
+EMPLOYEE_REF_ID	INCENTIVE_DATE	INCENTIVE_AMOUNT
+1	01-FEB-16	5000
+2	01-FEB-16	3000
+3	01-FEB-17	4000
+1	01-JAN-17	4500
+2	01-JAN-17	3500
+
+
+SQL Queries Interview Questions and Answers on "SQL Select" - Examples
+1.	Get all employee details from the employee table
+SELECT * FROM `employee2`
+
+ 
+2.	Get First_Name,Last_Name from employee table
+SELECT FIRST_NAME,LAST_NAME FROM `employee2
+
+ 
+
+3.	Get First_Name from employee table using alias name “Employee Name”
+SELECT FIRST_NAME AS "EMPLOYEE NAME" FROM employee2
+
+ 
+4.	Get First_Name from employee table in upper case
+SELECT UPPER(FIRST_NAME)FROM employee2
+
+ 
+5.	Get First_Name from employee table in lower case
+SELECT LOWER(FIRST_NAME)FROM employee2
+
+ 
+
+6.	Get unique DEPARTMENT from employee table
+SELECT DISTINCT DEPARTMENT FROM employee2
+
+ 
+7.	Select first 3 characters of FIRST_NAME from EMPLOYEE
+SELECT SUBSTRING(FIRST_NAME,1,3)FROM employee2
+
+ 
+
+8.	Get position of 'a' in name 'ragavi' from employee table
+SELECT INSTR(FIRST_NAME,'a') FROM employee2 WHERE FIRST_NAME = 'Ragavi'
+ 
+9.	Get FIRST_NAME from employee table after removing white spaces from right side
+SELECT RTRIM(FIRST_NAME)FROM employee2
+
+ 
+10.	Get FIRST_NAME from employee table after removing white spaces from left side
+SELECT LTRIM(FIRST_NAME)FROM employee2
+
+ 
+11.	Get length of FIRST_NAME from employee table
+select length(FIRST_NAME) from employee2
+
+ 
+12.	Get First_Name from employee table after replacing 'a' with '$'
+select REPLACE(FIRST_NAME,'a','$') from employee2
+
+ 
+13.	Get First_Name and Last_Name as single column from employee table separated by a '_'
+SELECT concat(FIRST_NAME,'_',LAST_NAME) FROM employee2
+
+ 
+14.	Get FIRST_NAME ,Joining year,Joining Month and Joining Date from employee table
+SELECT year(DATE_OF_JOINING),month(DATE_OF_JOINING), DAY(DATE_OF_JOINING) from employee2
+
+ 
+Database SQL Queries Interview Questions and answers on "SQL Order By"
+15.	Get all employee details from the employee table order by First_Name Ascending
+SELECT * FROM employee2 ORDER BY FIRST_NAME
+
+ 
+16.	Get all employee details from the employee table order by First_Name descending
+SELECT * FROM employee2 ORDER BY FIRST_NAME DESC
+
+ 
+17.	Get all employee details from the employee table order by First_Name Ascending and Salary descending
+SELECT * FROM employee2 ORDER BY FIRST_NAME ASC,SALARY DESC
+ 
+SQL Queries Interview Questions and Answers on "SQL Where Condition" - Examples
+18.	Get employee details from employee table whose employee name is “Dinesh”
+SELECT * FROM employee2 WHERE FIRST_NAME='Dinesh
+ 
+19.	Get employee details from employee table whose employee name are “Dinesh” and “Roy”
+SELECT * FROM employee2 WHERE FIRST_NAME in ('Dinesh','Roy')
+
+ 
+20.	Get employee details from employee table whose employee name are not “Dinesh” and “Roy”
+SELECT * FROM employee2 WHERE FIRST_NAME NOT IN ('Dinesh','Roy')
+
+ 
+SQL Queries Interview Questions and Answers on "SQL Wild Card Search" - Examples
+21.	Get employee details from employee table whose first name starts with 's'
+SELECT * FROM employee2 WHERE FIRST_NAME LIKE 's%'
+
+ 
+22.	Get employee details from employee table whose first name contains 'v'
+SELECT * FROM employee2 WHERE FIRST_NAME LIKE '%v%'
+
+ 
+23.	Get employee details from employee table whose first name ends with 'n'
+SELECT * FROM employee2 WHERE FIRST_NAME LIKE '%n'
+
+ 
+SQL Queries Interview Questions and Answers on "SQL Pattern Matching" - Examples
+24.	Get employee details from employee table whose first name ends with 'n' and name contains 5 letters
+Select * from employee2 where FIRST_NAME like '____n'
+
+ 
+25.	Get employee details from employee table whose first name starts with 'D' and name contains 5 letters
+SELECT * FROM employee2 WHERE FIRST_NAME LIKE 'D____'
+
+ 
+26.	Get employee details from employee table who’s Salary greater than 60000
+SELECT * FROM employee2 WHERE SALARY>60000
+
+ 
+27.	Get employee details from employee table who’s Salary less than 80000
+SELECT * FROM employee2 WHERE SALARY<80000
+
+ 
+28.	Get employee details from employee table who’s Salary between 50000 and 80000
+SELECT * FROM employee2 WHERE SALARY BETWEEN 50000 AND 80000
+
+ 
+29.	Get employee details from employee table whose name is venkatesh and ragavi
+30.	SELECT * FROM employee2 WHERE FIRST_NAME IN('Venkatesh','Ragavi')
+ 
+SQL Queries Interview Questions and Answers on "SQL DATE Functions" - Examples
+
+31.	Get employee details from employee table whose joining year is “2015”
+Select * from employee2 where year(DATE_OF_JOINING)='2015'
+
+ 
+31. Get employee details from employee table whose joining month is “February”
+Select * from employee2 where month(DATE_OF_JOINING)='02'
+ 
+32.	Get employee details from employee table who joined before January 1st 2017
+Select * from employee2 where DATE_OF_JOINING <'2017-01-01'
+
+ 
+33.	Get employee details from employee table who joined after January 31st 2016
+Select * from employee2 where DATE_OF_JOINING >'2016-01-31'
+
+ 
+35. Get Joining Date and Time from employee table
+36. Get Joining Date,Time including milliseconds from employee table
+37. Get difference between JOINING_DATE and INCENTIVE_DATE from employee and incentives table
+Select FIRST_NAME,INCENTIVE_DATE ,DATE_OF_JOINING from employee2 a inner join incentives B on A.EMPLOYEE_ID=B.Employer_ID
+ 
+38. Get database date
+SELECT now()
+ 
+SQL Queries Interview Questions and Answers on "SQL Escape Characters" - Examples
+
+39. Get names of employees from employee table who has '%' in Last_Name. Tip : Escape character for special characters in a query.
+Select FIRST_NAME FROM employee2 WHERE LAST_NAME LIKE '%\%%'
+ 
+40. Get Last Name from employee table after replacing special character with white space
+SELECT REPLACE(LAST_NAME,'%',' ')FROM employee2
+ 
+
+SQL Queries Interview Questions and Answers on "SQL Group By Functions" - Examples
+41. Get department,total salary with respect to a department from employee table.
+SELECT DEPARTMENT,SUM(SALARY) TOTAL_SALARY FROM employee2 GROUP BY DEPARTMENT
+ 
+42. Get department,total salary with respect to a department from employee table order by total salary descending
+Select DEPARTMENT,sum(SALARY) Total_Salary from employee2 group by DEPARTMENT ORDER BY Total_Salary DESC
+ 
+SQL Queries Interview Questions and Answers on "SQL Mathematical Operations using Group By" - Examples
+43. Get department,no of employees in a department,total salary with respect to a department from employee table order by total salary descending
+SELECT DEPARTMENT,COUNT(FIRST_NAME),SUM(SALARY) TOTAL_SALARY FROM employee2 GROUP BY DEPARTMENT ORDER BY TOTAL_SALARY DESC
+ 
+44. Get department wise average salary from employee table order by salary ascending
+SELECT DEPARTMENT,AVG(SALARY) AVG_SALARY FROM employee2 GROUP BY DEPARTMENT ORDER BY AVG_SALARY ASC
+ 
+45. Get department wise maximum salary from employee table order by salary ascending
+SELECT DEPARTMENT,MAX(SALARY) MAX_SALARY FROM employee2 GROUP BY DEPARTMENT ORDER BY MAX_SALARY ASC
+ 
+46. Get department wise minimum salary from employee table order by salary ascending
+SELECT DEPARTMENT,MIN(SALARY) MIN_SALARY FROM employee2 GROUP BY DEPARTMENT ORDER BY MIN_SALARY ASC
+ 
+47. Select no of employees joined with respect to year and month from employee table
+SELECT year (DATE_OF_JOINING) JOIN_YEAR, month (DATE_OF_JOINING) JOIN_MONTH,COUNT(*) TOTAL_EMP FROM employee2 GROUP BY year (DATE_OF_JOINING),month(DATE_OF_JOINING)
+ 
+48. Select department,total salary with respect to a department from employee table where total salary greater than 80000 order by Total_Salary descending
+SELECT DEPARTMENT,SUM(SALARY) TOTAL_SALARY FROM employee2 GROUP BY DEPARTMENT HAVING SUM(SALARY) >80000 ORDER BY TOTAL_SALARY DESC
+ 
+SQL Queries Interview Questions and Answers on "SQL Joins" - Examples
+
+49. Select first_name, incentive amount from employee and incentives table for those employees who have incentives
+Select FIRST_NAME,Incentive_amount from employee2 a inner join incentives B on A.EMPLOYEE_ID = B.Employer_ID
+ 
+
+50. Select first_name, incentive amount from employee and incentives table for those employees who have incentives and incentive amount greater than 3000
+Select FIRST_NAME,Incentive_amount from employee2 a inner join incentives B on A.EMPLOYEE_ID = B.Employer_ID and Incentive_amount > 3000
+ 
+51. Select first_name, incentive amount from employee and incentives table for all employes even if they didn't get incentives
+Select FIRST_NAME,Incentive_amount from employee2 a left join incentives B on A.EMPLOYEE_ID = B.Employer_ID
+ 
+52. Select first_name, incentive amount from employee and incentives table for all employees even if they didn't get incentives and set incentive amount as 0 for those employees who didn't get incentives.
+Select FIRST_NAME, IFNULL(Incentive_amount,0) from employee2 a left join incentives B on A.EMPLOYEE_ID = B.Employer_ID
+ 
+53. Select first_name, incentive amount from employee and incentives table for all employees who got incentives using left join
+Select FIRST_NAME, Incentive_amount from employee2 a left join incentives B on A.EMPLOYEE_ID = B.Employer_ID
+ 
+54. Select max incentive with respect to employee from employee and incentives table using sub query
+select DEPARTMENT,(select nvl(max(Incentive_amount),0) from incentives where employer_id = EMPLOYEE_ID) Max_incentive from employee2
+ 
+Advanced SQL Queries Interview Questions and Answers on "Top N Salary" - Examples
+55. Select TOP 2 salary from employee table
+select * from employee2 order by SALARY desc limit 2
+ 
+56. Select TOP N salary from employee table
+select * from employee2 order by SALARY desc limit 5
+ 
+57. Select 2nd Highest salary from employee table
+select min(SALARY) 2ndMIN_SAL from (select * from employee2 order by SALARY desc limit 2) a
+ 
+58. Select Nth Highest salary from employee table
+select min(SALARY) 5thMIN_SAL from (select * from employee2 order by SALARY desc limit 5) a
+ 
+SQL Queries Interview Questions and Answers on "SQL Union" - Examples
+59. Select First_Name,LAST_NAME from employee table as separate rows
+select FIRST_NAME from employee2 union select LAST_NAME from employee2
+ 
+
+60. What is the difference between UNION and UNION ALL ?
+
+
+"Advanced SQL Queries Interview Questions and Answers"
+
+61. Select employee details from employee table if data exists in incentive table ?
+select * from employee2 where exists (select * from incentives)
+ 
+62. How to fetch data that are common in two query results ?
+
+63. Get Employee ID's of those employees who didn't receive incentives without using sub query ?
+
+64. Select 20 % of salary from venkat , 10% of Salary for gopi and for other 15 % of salary from employee table
+SELECT FIRST_NAME, CASE FIRST_NAME WHEN 'Venkatesh' THEN SALARY * .2 WHEN 'Gopinath' THEN SALARY * .10 ELSE SALARY * .15 END "Deduced_Amount" FROM employee2
+ 
+65. Select Banking as 'Bank Dept', Insurance as 'Insurance Dept' and Services as 'Pharma Dept' from employee table
+66. Delete employee data from employee table who got incentives in incentive table
+67. Insert into employee table Last Name with " ' " (Single Quote - Special Character)
+68. Select Last Name from employee table which contain only numbers
+69. Write a query to rank employees based on their incentives for a month
+70. Update incentive table where employee name is 'Dinesh'
+
